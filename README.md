@@ -1,6 +1,6 @@
 # Programming Challenge 
 
-Senior Frontend Developer Position.
+Frontend Developer Position.
 
 Please read this document from beginning to end, paying close attention. 
 
