@@ -73,7 +73,8 @@ Your project will be evaluated based on the following criteria:
 
 Additionally, we will try to assess your familiarity with standard libraries and your experience with object-oriented programming based on the structure of your project.
 
-#
+# _
 
-Good Luck!
+
+Good luck!
 
