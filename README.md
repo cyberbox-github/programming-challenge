@@ -38,16 +38,20 @@ Add/Edit Post Page:
   Implement a form to add a new blog post. The form should include fields for the title, summary, content, and publication date. 
   The same form should be used to edit existing posts.
   
-Authentication: 
+Authentication:
+
   Implement basic authentication (can be a mock) to protect the add/edit post page. Only authenticated users should be able to add or edit posts.
   
-Comments: 
+Comments:
+
   Allow users to leave comments on the posts. For this, a form should be available on the post detail page.
   
-Notifications: 
+Notifications:
+
   Implement a basic notification system that notifies the user when a new comment is added to one of their posts.
   
-Validations: 
+Validations:
+
   Implement validations on the add/edit post and comment forms to ensure that the entered data is valid.
 
 # Technical Requirements:
