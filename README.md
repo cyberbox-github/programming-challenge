@@ -29,6 +29,7 @@ Take as much time as you need, but typically, you should not require more than a
 
   You are required to develop a small blog application with the following functionalities:
   
+  
 Homepage:
   
   Display a list of blog posts in descending order based on the publication date. 
@@ -36,6 +37,7 @@ Homepage:
   Each list item should show the title, a brief summary, and the publication date.
   
   The homepage should be created using NextJS's Static Site Generation (SSG).
+  
   
 Post Detail Page: 
   
@@ -45,6 +47,7 @@ Post Detail Page:
   
   Server Side Rendering (SSR) from NextJS should be used to fetch post details for each post.
   
+  
 Add/Edit Post Page:
   
   Implement a form to add a new blog post. 
@@ -53,11 +56,13 @@ Add/Edit Post Page:
   
   The same form should be used to edit existing posts.
   
+  
 Authentication:
 
   Implement basic authentication (can be a mock) to protect the add/edit post page.
   
   Only authenticated users should be able to add or edit posts.
+  
   
 Comments:
 
@@ -65,13 +70,16 @@ Comments:
   
   For this, a form should be available on the post detail page.
   
+  
 Notifications:
 
   Implement a basic notification system that notifies the user when a new comment is added to one of their posts.
   
+  
 Validations:
 
   Implement validations on the add/edit post and comment forms to ensure that the entered data is valid.
+  
 
 # Technical Requirements:
 
