@@ -23,7 +23,7 @@ Take as much time as you need, but typically, you should not require more than a
   
   Next, implement the project as described below in your local clone.
   
-  Finally, send the project or fork/link of the project via email to your CYBERBOX contact with a copy to wilker.flores@protonmail.com.
+  Finally, send the project or fork/link of the project via email to your CYBERBOX contact wilker.flores@protonmail.com.
 
 # Project Description:
 
