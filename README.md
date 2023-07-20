@@ -30,7 +30,7 @@ Take as much time as you need, but typically, you should not require more than a
   You are required to develop a small blog application with the following functionalities:
   
   
-Homepage:
+* Homepage:
   
   Display a list of blog posts in descending order based on the publication date. 
   
