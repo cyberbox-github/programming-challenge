@@ -7,9 +7,9 @@ import { Profile } from '@components/layout/profile'
 const Main = styled.main``
 
 const Header = styled.header`
-  background-color: #f29845;
-  color: white;
-  height: 100px;
+  background-color: ${(props) => props.theme.main};
+  color: ${(props) => props.theme.primaryText};
+  height: 60px;
   padding: 10px;
   font-weight: 600;
   font-size: x-large;
@@ -30,7 +30,7 @@ const Container = styled.section`
   padding: 32px;
   max-width: 1200px;
   margin: 32px auto;
-  background-color: #f4ede7;
+  background-color: ${(props) => props.theme.container};
   border-radius: 5px;
 `
 
@@ -45,7 +45,6 @@ export default function Layout({ children }: { children: ReactNode }) {
     <Main>
       <Header>
         <HeaderContainer>
-          <Link href={'/'}>Posts</Link>
           <ProfileContainer>
             <Profile />
           </ProfileContainer>

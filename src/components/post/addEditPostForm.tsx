@@ -8,7 +8,7 @@ import { styled } from 'styled-components'
 import { addPost, updatePost } from '@services/postService'
 import { Post, PostContent } from '@types'
 import { getUpdateParts } from '@utils'
-import { FullWidthLabel, Input } from '@styled/form'
+import { FullWidthLabel, Input, TextArea } from '@styled/form'
 import { Button } from '@styled/button'
 
 const schema = Yup.object().shape({
@@ -74,12 +74,12 @@ export const AddEditPostForm = ({ post }: { post?: Post }) => {
 
       <FullWidthLabel>
         Summary:
-        <Input {...register('summary')} />
+        <TextArea rows={3} {...register('summary')} />
       </FullWidthLabel>
 
       <FullWidthLabel>
         Content:
-        <Input {...register('content')} />
+        <TextArea rows={8} {...register('content')} />
       </FullWidthLabel>
 
       <FullWidthLabel>

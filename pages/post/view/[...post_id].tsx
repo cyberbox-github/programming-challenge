@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 import { Button } from '@styled/button'
-import { EM, Title, Summary, PostDate, Content } from '@styled/post'
+import { Typography } from '@styled/typography'
 import { CommentManage } from '@components/post/addCommentForm'
 import { usePostContext } from '@context/PostProvider'
 import { getPost } from '@services/postService'
@@ -21,14 +21,9 @@ const PostContainer = styled.div`
 `
 
 const CommentContainer = styled.ul`
-  border: 1px solid lightgray;
+  padding: 1.5rem 2.5rem;
   border-radius: 5px;
-  padding: 20px;
-  padding-left: 40px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  box-shadow: 1px 1px 1px ${(props) => props.theme.border};
 `
 
 const EditButton = styled(Button)`
@@ -36,10 +31,18 @@ const EditButton = styled(Button)`
   height: 40px;
   width: 120px;
   margin-bottom: 1rem;
+  font-size: 0.75rem;
+  padding: 0.375rem 1rem;
 `
 
 const AddFormCommentContainer = styled.div`
   margin-top: 2rem;
+`
+
+const BlogHeadContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
 `
 
 export default function PostDetail({ post }: { post: Post }) {
@@ -51,23 +54,29 @@ export default function PostDetail({ post }: { post: Post }) {
 
   return (
     <PostContainer>
-      <Link href='/post/edit'>
-        <EditButton>Edit</EditButton>
-      </Link>
-      <EM>Title</EM>
-      <Title>{post.title}</Title>
-      <EM>Summary</EM>
-      <Summary>{post.summary}</Summary>
-      <EM>Content</EM>
-      <Content>{post.content}</Content>
-      <EM>Date</EM>
-      <PostDate>{moment(post.date).format('YYYY-MM-DD')}</PostDate>
+      <BlogHeadContainer>
+        <div>
+          <Typography.HEAD style={{ marginBottom: '1rem' }}>{post.title}</Typography.HEAD>
+          <Typography.Detail>{moment(post.date).format('YYYY-MM-DD')}</Typography.Detail>
+        </div>
 
-      <CommentContainer>
-        {post.comments.map((comment: string, index) => (
-          <li key={index}>{comment}</li> // key should be unique for each comment and will be replaced by comment id in real database.
-        ))}
-      </CommentContainer>
+        <Link href='/post/edit'>
+          <EditButton>Edit</EditButton>
+        </Link>
+      </BlogHeadContainer>
+      <Typography.TitleHeading>Summary</Typography.TitleHeading>
+      <Typography.Detail style={{ marginBottom: '1rem' }}>{post.summary}</Typography.Detail>
+      <Typography.TitleHeading>Content</Typography.TitleHeading>
+      <Typography.Detail>{post.content}</Typography.Detail>
+
+      <Typography.TitleHeading style={{ marginTop: '2rem' }}>
+        Comments for the blog
+      </Typography.TitleHeading>
+      {post.comments.map((comment) => (
+        <CommentContainer key={comment.id}>
+          <Typography.Detail>{comment.content}</Typography.Detail>
+        </CommentContainer>
+      ))}
 
       <AddFormCommentContainer>
         <CommentManage post={post} />

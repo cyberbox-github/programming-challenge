@@ -12,7 +12,7 @@ const LoginButton = styled(LightButton)`
 
 const WelcomeUser = styled.em`
   font-size: 0.8rem;
-  color: #444341;
+  color: ${(props) => props.theme.contrastText};
 `
 
 export const Profile = () => {

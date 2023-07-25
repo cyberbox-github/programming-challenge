@@ -2,13 +2,17 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
 
 import posts from '@db/post'
+import comments from '@db/comment'
 
 /**
  * Function to get the post by its id from json-database file
  * @param id string  This is the post id
  * @returns a post
  */
-const getPostById = (id: string) => posts.find((post) => post.id === id)
+const getPostById = (id: string) => ({
+  ...posts.find((post) => post.id === id),
+  comments: comments.filter((comment) => comment.postId === id),
+})
 
 /**
  * Controller of CRUD of post by id

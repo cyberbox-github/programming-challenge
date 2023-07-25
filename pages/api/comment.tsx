@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
 
-import posts from '@db/post'
+import comments from '@db/comment'
 
 /**
  * Controller to mock CRUD of comments
@@ -13,10 +13,11 @@ import posts from '@db/post'
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == 'POST') {
-    const comment = JSON.parse(req.body)
-    posts[comment.postId].comments?.push(comment.comment)
+    const { postId, comment } = JSON.parse(req.body)
 
-    await fs.writeFileSync('db/post.json', JSON.stringify(posts))
+    comments.push({ id: comments.length.toString(), postId, content: comment })
+
+    await fs.writeFileSync('db/comment.json', JSON.stringify(comments))
     res.status(200).json({ code: 'SUCCESS' })
   }
 }

@@ -4,8 +4,8 @@ export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: #585755;
-  border: 1px solid #d9d9d9;
+  background-color: ${(props) => props.theme.paper};
+  border: 1px solid ${(props) => props.theme.divider};
   color: white;
   border-radius: 5px;
   padding: 20px;
@@ -13,7 +13,7 @@ export const PostContainer = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #6b6b69;
+    background-color: ${(props) => props.theme.paperHover};
   }
 `
 

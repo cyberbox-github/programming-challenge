@@ -1,1 +1,16 @@
-[{"id":"0","title":"Blog333","summary":"Blog ","content":"Blog Content234234","date":"2023-08-25T15:00:00.000Z","comments":["Comment 1-1","Comment 1-2","Comment 1-3","sdfsdf"]},{"date":"2023-07-24T22:00:00.000Z","title":"afasdfdasfdsaf","summary":"","content":"","id":"1","comments":[]}]
+[
+  {
+    "id": "0",
+    "title": "Blog333",
+    "summary": "Si vous êtes arrivé.e sur cet article, c'est que la question de la création d'un site Web vous intéresse et que - par goût du challenge, par curiosité intellectuelle ou par souci d'économies - vous aimeriez créer votre site Web par vous-même. Cela vous parait encore impossible pour l'instant mais je vous parie qu'après avoir lu cette série d'articles, vous aurez réalisé votre site Web sans l'aide de personne !",
+    "content": "Grâce au premier épidsode Créer un site Web gratuit pour mon activité, vous avez créé votre site Web avec Joomla, vous avez créé une catégorie d'articles, ajouté un nouvel article et vous l'avez affiché sur votre site Web. Et tout cela gratuitement, comme promis ! Aujourd'hui, nous allons continuer à créer un site Web en allant un peu plus loin. Ce deuxième épisode sera un peu plus copieux que le précédent mais rassurez-vous, ce sera tout aussi facile et amusant. Au programme : Ajout d'informations sur la page de présentation de chaque livre: le nom de l'auteur, le prix de vente, le code ISBN, l'éditeur, l'éditeur, etc. Création et affichage d'une page pour chaque auteur où l'on aura sa biographie et sa bibliographie.",
+    "date": "2023-08-25T15:00:00.000Z"
+  },
+  {
+    "date": "2023-07-24T22:00:00.000Z",
+    "title": "afasdfdasfdsaf",
+    "summary": "",
+    "content": "",
+    "id": "1"
+  }
+]

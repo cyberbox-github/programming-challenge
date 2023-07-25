@@ -6,9 +6,10 @@ const nextConfig = {
   },
   env: {
     SERVER_URL: process.env.SERVER_URL,
-    CLIENT_URL: process.env.CLIENT_URL
+    CLIENT_URL: process.env.CLIENT_URL,
+    NEXT_APP_TITLE: process.env.NEXT_APP_TITLE,
   },
-  pageExtensions: ['tsx', 'ts']
+  pageExtensions: ['tsx', 'ts'],
 }
 
 module.exports = nextConfig

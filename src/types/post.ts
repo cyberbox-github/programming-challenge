@@ -1,9 +1,15 @@
+export type Comment = {
+  id: string
+  postId: string
+  content: string
+}
+
 export type Post = {
   id: string
   title: string
   summary: string
   content: string
-  comments: string[]
+  comments: Comment[]
   date: Date | string
 }
 

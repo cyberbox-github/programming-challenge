@@ -25,17 +25,17 @@ export const FullWidthLabel = styled.label`
 export const Input = styled.input`
   font-size: 1rem;
   padding: 8px 16px;
-  border: 1px solid #e5dace;
+  border: 1px solid ${(props) => props.theme.lightBorder};
   &:focus {
-    border: 1px solid #e5dace;
+    border: 1px solid ${(props) => props.theme.lightBorder};
   }
 `
 
 export const TextArea = styled.textarea`
   font-size: 1rem;
   padding: 8px 16px;
-  border: 1px solid #e5dace;
+  border: 1px solid ${(props) => props.theme.lightBorder};
   &:focus {
-    border: 1px solid #e5dace;
+    border: 1px solid ${(props) => props.theme.lightBorder};
   }
 `
