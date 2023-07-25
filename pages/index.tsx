@@ -37,9 +37,9 @@ export default function Page({ posts }: { posts: Post[] }) {
 
   return (
     <PageContainer>
-      <AddButton>
-        <Link href='/post/add'>Add a Post</Link>
-      </AddButton>
+      <Link href='/post/add'>
+        <AddButton>Add a Post</AddButton>
+      </Link>
       <PostsContainer>
         {posts.map((e, i) => (
           <PostCard key={i} post={e} />

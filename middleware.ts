@@ -1,4 +1,4 @@
-import { withAuth } from "next-auth/middleware"
+import { withAuth } from 'next-auth/middleware'
 
 export default withAuth({
   callbacks: {
@@ -8,4 +8,4 @@ export default withAuth({
   },
 })
 
-export const config = { matcher: ["/post/add", "/post/edit"] }
+export const config = { matcher: ['/post/add', '/post/edit'] }

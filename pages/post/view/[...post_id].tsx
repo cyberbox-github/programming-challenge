@@ -51,9 +51,9 @@ export default function PostDetail({ post }: { post: Post }) {
 
   return (
     <PostContainer>
-      <EditButton>
-        <Link href='/post/edit'>Edit</Link>
-      </EditButton>
+      <Link href='/post/edit'>
+        <EditButton>Edit</EditButton>
+      </Link>
       <EM>Title</EM>
       <Title>{post.title}</Title>
       <EM>Summary</EM>
