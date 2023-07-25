@@ -7,10 +7,11 @@ import {
   SOCKET_DISCONNECTED,
   SOCKET_LISTEN_TO_COMMENT,
 } from '@constants'
+import { useSnackbar } from 'notistack'
 
 let socket: Socket
 
-const socketInitializer = async () => {
+const socketInitializer = async (received: (msg: string) => void) => {
   await fetch('/api/socket')
   socket = io()
   socket.connect()
@@ -18,7 +19,7 @@ const socketInitializer = async () => {
   socket.on('connect', () => {
     console.log(SOCKET_CONNECTED)
     socket.on(SOCKET_BROADCAST_ADD_COMMENT_EVENT, (msg) => {
-      alert(msg)
+      received(msg)
     })
   })
 
@@ -32,8 +33,10 @@ export const sendCommentSignal = (comment: string) => {
 }
 
 export default function SocketProvider() {
+  const { enqueueSnackbar } = useSnackbar()
+
   useEffect(() => {
-    socketInitializer()
+    socketInitializer((msg) => enqueueSnackbar(msg, { variant: 'info' }))
 
     return () => {
       if (socket) socket.close()

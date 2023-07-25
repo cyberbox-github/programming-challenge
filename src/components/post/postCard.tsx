@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { Typography } from '@styled/typography'
 import { Post } from '@types'
 import { Button } from '@styled/button'
+import { DATA_TEST_POST_CARD_ID } from '@constants'
 
 const PostContainer = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ export const PostCard = ({ post }: { post: Post }) => {
   const handleGoDetail = () => router.push(`/post/view/${post.id}`)
 
   return (
-    <PostContainer>
+    <PostContainer data-testid={DATA_TEST_POST_CARD_ID}>
       <Typography.HEAD>{post.title}</Typography.HEAD>
       <Typography.Detail>{new Date(post.date).toLocaleDateString()}</Typography.Detail>
       <Typography.Detail>{post.summary}</Typography.Detail>

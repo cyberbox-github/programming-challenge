@@ -3,17 +3,20 @@ import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import moment from 'moment'
-import { styled } from 'styled-components'
+import { styled, useTheme } from 'styled-components'
 
 import { addPost, updatePost } from '@services/postService'
 import { Post, PostContent } from '@types'
 import { getUpdateParts } from '@utils'
 import { FullWidthLabel, Input, TextArea } from '@styled/form'
 import { Button } from '@styled/button'
+import { Typography } from '@styled/typography'
 
 const schema = Yup.object().shape({
   title: Yup.string().required('Title is required.'),
-  date: Yup.date().required('Publication date is required.'),
+  date: Yup.date()
+    .typeError('Please select the date from the calendar.')
+    .required('Publication date is required.'),
 })
 
 const ButtonContainer = styled.div`
@@ -29,6 +32,7 @@ const SubmitButton = styled(Button)`
 
 export const AddEditPostForm = ({ post }: { post?: Post }) => {
   const router = useRouter()
+  const theme = useTheme()
   const { id, comments, ...postContent } = post || ({} as Post)
 
   const {
@@ -68,8 +72,11 @@ export const AddEditPostForm = ({ post }: { post?: Post }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <FullWidthLabel>
         Title:
-        <Input {...register('title')} />
-        <span>{errors?.title?.message || ''}</span>
+        <Input
+          {...register('title')}
+          style={{ borderColor: errors?.title?.message ? theme.error : theme.border }}
+        />
+        <Typography.ErrorHelper>{errors?.title?.message || ''}</Typography.ErrorHelper>
       </FullWidthLabel>
 
       <FullWidthLabel>
@@ -84,8 +91,12 @@ export const AddEditPostForm = ({ post }: { post?: Post }) => {
 
       <FullWidthLabel>
         Date:
-        <Input type='date' {...register('date')} />
-        <span>{errors?.title?.message || ''}</span>
+        <Input
+          type='date'
+          {...register('date')}
+          style={{ borderColor: errors?.title?.message ? theme.error : theme.border }}
+        />
+        <Typography.ErrorHelper>{errors?.date?.message || ''}</Typography.ErrorHelper>
       </FullWidthLabel>
 
       <ButtonContainer>

@@ -24,9 +24,14 @@ const Action = styled.p`
   line-height: 0.625rem;
 `
 
+const ErrorHelper = styled(Detail)`
+  color: ${(props) => props.theme.error};
+`
+
 export const Typography = {
   HEAD,
   TitleHeading,
   Detail,
   Action,
+  ErrorHelper,
 }

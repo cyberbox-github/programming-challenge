@@ -10,14 +10,12 @@ export const Label = styled.label`
 `
 
 export const FullWidthLabel = styled.label`
-  margin-right: 24px;
-
   & {
     input,
     textarea {
       width: 100%;
-      margin-top: 8px;
-      margin-bottom: 24px;
+      margin-top: 0.375rem;
+      margin-bottom: 0.75rem;
     }
   }
 `
@@ -25,17 +23,17 @@ export const FullWidthLabel = styled.label`
 export const Input = styled.input`
   font-size: 1rem;
   padding: 8px 16px;
-  border: 1px solid ${(props) => props.theme.lightBorder};
+  border: 1px solid ${(props) => props.theme.border};
   &:focus {
-    border: 1px solid ${(props) => props.theme.lightBorder};
+    border: 1px solid ${(props) => props.theme.border};
   }
 `
 
 export const TextArea = styled.textarea`
   font-size: 1rem;
   padding: 8px 16px;
-  border: 1px solid ${(props) => props.theme.lightBorder};
+  border: 1px solid ${(props) => props.theme.border};
   &:focus {
-    border: 1px solid ${(props) => props.theme.lightBorder};
+    border: 1px solid ${(props) => props.theme.border};
   }
 `
